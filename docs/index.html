@@ -58,8 +58,10 @@
         <option value="hsl">HSL</option>
         <option value="hsla">HSLA</option>
         <option value="var">CSS-Variable</option>
+        <option value="cmyk">CMYK (Druck)</option>
       </select>
-      <span class="format__hint">Klick auf eine Farbe kopiert den Wert.</span>
+      <span class="format__hint">Klick auf eine Farbe kopiert den Wert. CMYK ist
+        für den Druck und kommt direkt aus dem Styleguide.</span>
     </div>
 
     <h3>Primärfarben</h3>
@@ -326,6 +328,7 @@
         <tr><td>Über einer Überschrift</td><td>1em</td><td>1 Überschriftenhöhe</td><td><code>--space-above-heading</code></td></tr>
         <tr><td>Zwischen Überschrift und Text</td><td>0.333em</td><td>⅓ Überschriftenhöhe</td><td><code>--space-below-heading</code></td></tr>
         <tr><td>Zwischen Subline und Überschrift</td><td>0.25em</td><td>¼ Überschriftenhöhe</td><td><code>--space-subline</code></td></tr>
+        <tr><td>Zwischen Text und folgender Unterüberschrift</td><td>1.333em</td><td>1⅓ Überschriftenhöhe</td><td><code>--space-text-subheading</code></td></tr>
         <tr><td>Zwischen Modulen und Elementen</td><td>6.25rem</td><td>100px</td><td><code>--space-module</code></td></tr>
         <tr><td>Text über einem Bild</td><td>2.5rem</td><td>40px</td><td><code>--space-text-image</code></td></tr>
         <tr><td>Bild über folgendem Text</td><td>4.5rem</td><td>72px</td><td><code>--space-image-text</code></td></tr>
@@ -341,6 +344,11 @@
       liegen deshalb auf der nächsten runden Stufe: 70px auf 4.5rem (72px),
       135px auf 8.5rem (136px), der Fließtext von 19px auf 1.2rem (19.2px).
       Mehr als 2px weicht nichts ab.</p>
+    <div class="note">
+      <p>Der Styleguide nennt für „Abstand zwischen Überschrift und Text“ je
+        nach Layout-Beispiel ⅓, ½ oder eine ganze Überschriftenhöhe. Hier steht
+        ⅓, bis geklärt ist, was wann gilt.</p>
+    </div>
   </section>
 
   <p class="page__footer">
@@ -354,30 +362,37 @@
 <script>
 // Colors, by group. The value itself comes from tokens.css at runtime, so it is
 // only written down in one place.
+// Name, token, CMYK. The CMYK values are taken from the styleguide as they
+// stand — they are a print measurement, not something to convert a hex code
+// into.
 const colorGroups = {
   "colors-primary": [
-    ["Grape dark", "--color-grape-dark"],
-    ["Grape", "--color-grape"],
-    ["Light Yellow", "--color-light-yellow"],
-    ["Peach", "--color-peach"]
+    ["Grape dark", "--color-grape-dark", "53 | 73 | 46 | 50"],
+    ["Grape", "--color-grape", "60 | 70 | 50 | 0"],
+    ["Light Yellow", "--color-light-yellow", "9 | 1 | 28 | 0"],
+    ["Peach", "--color-peach", "9 | 30 | 40 | 1"]
   ],
   "colors-secondary": [
-    ["Grape light", "--color-grape-light"],
-    ["Grape extra light", "--color-grape-extra-light"],
-    ["Grape extra light 3", "--color-grape-extra-light-3"],
-    ["Extra light Yellow", "--color-extra-light-yellow"],
-    ["Peach light", "--color-peach-light"],
-    ["Olive", "--color-olive"],
-    ["Moos", "--color-moos"],
-    ["Moos light", "--color-moos-light"],
-    ["Lake", "--color-lake"],
-    ["Arctic", "--color-arctic"]
+    ["Grape light", "--color-grape-light", "32 | 41 | 23 | 5"],
+    ["Grape extra light", "--color-grape-extra-light", "11 | 15 | 9 | 0"],
+    ["Grape extra light 3", "--color-grape-extra-light-3", "2 | 6 | 2 | 0"],
+    ["Extra light Yellow", "--color-extra-light-yellow", "2 | 0 | 9 | 0"],
+    ["Peach light", "--color-peach-light", "2 | 13 | 16 | 0"],
+    ["Olive", "--color-olive", "72 | 36 | 67 | 25"],
+    ["Moos", "--color-moos", "49 | 18 | 60 | 3"],
+    ["Moos light", "--color-moos-light", "11 | 5 | 12 | 0"],
+    ["Lake", "--color-lake", "93 | 53 | 40 | 30"],
+    ["Arctic", "--color-arctic", "57 | 27 | 37 | 8"]
   ],
   "colors-text": [
-    ["Body Text", "--color-body-text"],
-    ["Text light Grey", "--color-text-light-grey"]
+    ["Body Text", "--color-body-text", "64 | 55 | 52 | 54"],
+    ["Text light Grey", "--color-text-light-grey", "51 | 40 | 40 | 23"]
   ]
 };
+
+// Looked up rather than computed, keyed by token.
+const cmyk = Object.fromEntries(
+  Object.values(colorGroups).flat().map(([, token, value]) => [token, value]));
 
 const root = getComputedStyle(document.documentElement);
 const hexOf = token => root.getPropertyValue(token).trim();
@@ -410,6 +425,7 @@ function formatColor(token, format) {
     case "hsl": return `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
     case "hsla": return `hsla(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%, 1)`;
     case "var": return `var(${token})`;
+    case "cmyk": return cmyk[token];
     default: return hex.toUpperCase();
   }
 }
