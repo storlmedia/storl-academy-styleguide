@@ -326,15 +326,15 @@
         <tr><th>Wo</th><th>Wert</th><th>Ergibt</th><th>Token</th></tr>
       </thead>
       <tbody>
-        <tr><td>Zwischen Subline und Überschrift</td><td>0.25em</td><td>¼ Überschriftenhöhe</td><td><code>--space-subline</code></td></tr>
-        <tr><td>Zwischen Überschrift und Text</td><td>0.333em</td><td>⅓ Überschriftenhöhe</td><td><code>--space-below-heading</code></td></tr>
-        <tr><td>Zwischen Text und folgender Unterüberschrift</td><td>1.333em</td><td>1⅓ Überschriftenhöhe</td><td><code>--space-text-subheading</code></td></tr>
-        <tr><td>Nach einer Divider-Überschrift</td><td>1em</td><td>1 Überschriftenhöhe</td><td><code>--space-after-divider-heading</code></td></tr>
-        <tr><td>Zwischen Modulen und Elementen</td><td>6.25rem</td><td>100px</td><td><code>--space-module</code></td></tr>
-        <tr><td>Text über einem Bild</td><td>2.5rem</td><td>40px</td><td><code>--space-text-image</code></td></tr>
-        <tr><td>Bild über folgendem Text</td><td>4.5rem</td><td>72px</td><td><code>--space-image-text</code></td></tr>
-        <tr><td>Text zum Weiterlesen-Link</td><td>1.5rem</td><td>24px</td><td><code>--space-text-link</code></td></tr>
-        <tr><td>Band für Divider-Illustrationen</td><td>8.5rem</td><td>136px</td><td><code>--divider-block</code></td></tr>
+        <tr><td>Zwischen Subline und Überschrift</td><td><code>0.25em</code></td><td>¼ Überschriftenhöhe</td><td><code>--space-subline</code></td></tr>
+        <tr><td>Zwischen Überschrift und Text</td><td><code>calc(1em / 3)</code></td><td>⅓ Überschriftenhöhe</td><td><code>--space-below-heading</code></td></tr>
+        <tr><td>Zwischen Text und folgender Unterüberschrift</td><td><code>calc(4em / 3)</code></td><td>1⅓ Überschriftenhöhe</td><td><code>--space-text-subheading</code></td></tr>
+        <tr><td>Nach einer Divider-Überschrift</td><td><code>1em</code></td><td>1 Überschriftenhöhe</td><td><code>--space-after-divider-heading</code></td></tr>
+        <tr><td>Zwischen Modulen und Elementen</td><td><code>6.25rem</code></td><td>100px</td><td><code>--space-module</code></td></tr>
+        <tr><td>Text über einem Bild</td><td><code>2.5rem</code></td><td>40px</td><td><code>--space-text-image</code></td></tr>
+        <tr><td>Bild über folgendem Text</td><td><code>4.5rem</code></td><td>72px</td><td><code>--space-image-text</code></td></tr>
+        <tr><td>Text zum Weiterlesen-Link</td><td><code>1.5rem</code></td><td>24px</td><td><code>--space-text-link</code></td></tr>
+        <tr><td>Band für Divider-Illustrationen</td><td><code>8.5rem</code></td><td>136px</td><td><code>--divider-block</code></td></tr>
       </tbody>
     </table>
     <p>Die px-Werte in der Spalte „Ergibt“ gelten bei der Standard-Schriftgröße
@@ -367,7 +367,7 @@
         </div>
         <div class="h1" style="text-align: center">Erkennungsmerkmale und
           Verwechslungsgefahren</div>
-        <div class="spec__gap" style="--gap: calc(var(--h1-size) * 0.333)">
+        <div class="spec__gap" style="--gap: calc(var(--h1-size) / 3)">
           <span class="spec__note"><b>Überschrift zu Text</b>
             ⅓ der Überschriftenhöhe</span>
         </div>
@@ -391,7 +391,7 @@
             ¼ der Überschriftenhöhe</span>
         </div>
         <div class="h1">Storl Akademie</div>
-        <div class="spec__gap" style="--gap: calc(var(--h1-size) * 0.333)">
+        <div class="spec__gap" style="--gap: calc(var(--h1-size) / 3)">
           <span class="spec__note"><b>Überschrift zu Text</b>
             ⅓ der Überschriftenhöhe</span>
         </div>
@@ -407,7 +407,7 @@
       <div class="spec__frame">
         <p class="body" style="margin: 0">Ich wünsche dir viele Erkenntnisse und
           Freude an den Pflanzen,</p>
-        <div class="spec__gap" style="--gap: calc(var(--h4-size) * 1.333)">
+        <div class="spec__gap" style="--gap: calc(var(--h4-size) * 4 / 3)">
           <span class="spec__note"><b>Text zu Unterüberschrift</b>
             1⅓ der Überschriftenhöhe</span>
         </div>

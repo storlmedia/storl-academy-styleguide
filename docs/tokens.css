@@ -84,9 +84,9 @@
   /* Spacing around a heading. The source states these as fractions of the
      heading height, so they are set on the heading itself and follow its size. */
   --space-after-divider-heading: 1em; /* 1 heading height */
-  --space-below-heading: 0.333em; /* 1/3 */
+  --space-below-heading: calc(1em / 3); /* 1/3 */
   --space-subline: 0.25em; /* 1/4 */
-  --space-text-subheading: 1.333em; /* 1 1/3, text to a following sub-heading */
+  --space-text-subheading: calc(4em / 3); /* 1 1/3, text to a following sub-heading */
 
   /* Spacing between elements. These are layout distances, not tied to any
      text, so they stay absolute. */
