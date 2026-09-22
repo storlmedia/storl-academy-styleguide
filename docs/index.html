@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storl-Akademie Styleguide</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styleguide.css">
+<link rel="stylesheet" href="components.css">
+</head>
+<body>
+<main class="page">
+
+  <h1>Storl-Akademie Styleguide</h1>
+  <p class="page__intro">
+    Verbindliche Referenz für Farben, Schriften, Abstände und Komponenten auf
+    storl-akademie.de. Gilt für Inhalte in Gutenberg und Elementor gleichermaßen.
+  </p>
+
+  <p class="draft-note">
+    <strong>Entwurf.</strong> Alle Werte auf dieser Seite sind Platzhalter und
+    zeigen nur den Aufbau. Die echten Marken-Werte folgen.
+  </p>
+
+  <nav class="toc">
+    <ul>
+      <li><a class="link" href="#farben">Farben</a></li>
+      <li><a class="link" href="#schriften">Schriften</a></li>
+      <li><a class="link" href="#logo">Logo</a></li>
+      <li><a class="link" href="#icons">Icons</a></li>
+      <li><a class="link" href="#komponenten">Komponenten</a></li>
+      <li><a class="link" href="#links">Links</a></li>
+      <li><a class="link" href="#abstaende">Abstände</a></li>
+    </ul>
+  </nav>
+
+  <section class="section" id="farben">
+    <h2>Farben</h2>
+    <p>Der Name ist der verbindliche Bezug. In Gutenberg und Elementor werden die
+      globalen Farben genauso benannt, damit im Editor nicht nach Hex-Werten
+      gesucht werden muss.</p>
+    <div class="grid">
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-primary)"></div>
+        <div class="swatch__name">Primary</div>
+        <div class="swatch__meta">#2F5D3F · <code>--color-primary</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-primary-dark)"></div>
+        <div class="swatch__name">Primary Dark</div>
+        <div class="swatch__meta">#1F3F2A · <code>--color-primary-dark</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-accent)"></div>
+        <div class="swatch__name">Accent</div>
+        <div class="swatch__meta">#D98B2B · <code>--color-accent</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-text)"></div>
+        <div class="swatch__name">Text</div>
+        <div class="swatch__meta">#1C1C1C · <code>--color-text</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-text-muted)"></div>
+        <div class="swatch__name">Text Muted</div>
+        <div class="swatch__meta">#5E5E5E · <code>--color-text-muted</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-surface)"></div>
+        <div class="swatch__name">Surface</div>
+        <div class="swatch__meta">#F4F2ED · <code>--color-surface</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-border)"></div>
+        <div class="swatch__name">Border</div>
+        <div class="swatch__meta">#DDD8CF · <code>--color-border</code></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: var(--color-background)"></div>
+        <div class="swatch__name">Background</div>
+        <div class="swatch__meta">#FFFFFF · <code>--color-background</code></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="schriften">
+    <h2>Schriften</h2>
+    <p>Überschriften und Fließtext nutzen zwei getrennte Schriftfamilien. Die
+      Größen sind eine feste Leiter — keine Zwischenwerte im Editor eintragen.</p>
+
+    <div class="specimen">
+      <div style="font-family: var(--font-heading); font-size: var(--text-3xl)">Überschrift 1</div>
+      <div class="specimen__meta">Heading · 2.5rem / 40px · <code>--text-3xl</code></div>
+    </div>
+    <div class="specimen">
+      <div style="font-family: var(--font-heading); font-size: var(--text-2xl)">Überschrift 2</div>
+      <div class="specimen__meta">Heading · 2rem / 32px · <code>--text-2xl</code></div>
+    </div>
+    <div class="specimen">
+      <div style="font-family: var(--font-heading); font-size: var(--text-xl)">Überschrift 3</div>
+      <div class="specimen__meta">Heading · 1.5rem / 24px · <code>--text-xl</code></div>
+    </div>
+    <div class="specimen">
+      <div style="font-size: var(--text-lg)">Vorspann oder hervorgehobener Absatz</div>
+      <div class="specimen__meta">Body · 1.25rem / 20px · <code>--text-lg</code></div>
+    </div>
+    <div class="specimen">
+      <div>Fließtext. Der Standard für alle Absätze auf der Website.</div>
+      <div class="specimen__meta">Body · 1rem / 16px · <code>--text-base</code></div>
+    </div>
+    <div class="specimen">
+      <div style="font-size: var(--text-sm)">Bildunterschrift, Hinweis, Fußnote</div>
+      <div class="specimen__meta">Body · 0.875rem / 14px · <code>--text-sm</code></div>
+    </div>
+  </section>
+
+  <section class="section" id="logo">
+    <h2>Logo</h2>
+    <p>Platzhalter. Hier stehen später die Logo-Varianten, der Mindest-Schutzraum
+      und die kleinstmögliche Größe.</p>
+    <div class="demo demo--block">
+      <img src="assets/logo/logo-placeholder.svg" alt="Logo-Platzhalter" width="240" height="48">
+    </div>
+    <p class="specimen__meta">Quelle: <code>assets/logo/</code></p>
+  </section>
+
+  <section class="section" id="icons">
+    <h2>Icons</h2>
+    <p>Aus Figma exportierte SVGs. Sie übernehmen die Textfarbe, in der sie
+      stehen, und werden nach dem benannt, was sie zeigen.</p>
+    <div class="grid">
+      <div class="icon-tile">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
+        <code>arrow-right</code>
+      </div>
+      <div class="icon-tile">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <code>calendar</code>
+      </div>
+      <div class="icon-tile">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
+        <code>download</code>
+      </div>
+    </div>
+    <p class="specimen__meta">Quelle: <code>assets/icons/</code></p>
+  </section>
+
+  <section class="section" id="komponenten">
+    <h2>Komponenten</h2>
+
+    <h3>Button</h3>
+    <p>Primär für die wichtigste Aktion einer Seite, sekundär für alles daneben.
+      Pro Abschnitt höchstens ein primärer Button.</p>
+    <div class="demo">
+      <a class="button button--primary" href="#komponenten">Jetzt anmelden</a>
+      <a class="button button--secondary" href="#komponenten">Mehr erfahren</a>
+    </div>
+    <p class="specimen__meta">Innenabstand 8px / 24px · Radius 4px</p>
+
+    <h3>Trennlinie</h3>
+    <p>Trennt Abschnitte innerhalb eines Textes. Nicht als Dekoration einsetzen.</p>
+    <div class="demo demo--block">
+      <p>Abschnitt davor.</p>
+      <hr class="divider">
+      <p>Abschnitt danach.</p>
+    </div>
+  </section>
+
+  <section class="section" id="links">
+    <h2>Links</h2>
+    <p>Links im Fließtext sind immer unterstrichen — Farbe allein reicht als
+      Erkennungsmerkmal nicht aus.</p>
+    <div class="demo demo--block">
+      <p>Die Kurstermine stehen im
+        <a class="link" href="#links">Veranstaltungskalender</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="abstaende">
+    <h2>Abstände</h2>
+    <p>Alle Abstände stammen aus dieser Leiter. Werte dazwischen werden im Editor
+      nicht eingetragen.</p>
+    <div class="space-row"><code>--space-1</code><span>4px</span><div class="space-bar" style="width: var(--space-1)"></div></div>
+    <div class="space-row"><code>--space-2</code><span>8px</span><div class="space-bar" style="width: var(--space-2)"></div></div>
+    <div class="space-row"><code>--space-3</code><span>16px</span><div class="space-bar" style="width: var(--space-3)"></div></div>
+    <div class="space-row"><code>--space-4</code><span>24px</span><div class="space-bar" style="width: var(--space-4)"></div></div>
+    <div class="space-row"><code>--space-5</code><span>32px</span><div class="space-bar" style="width: var(--space-5)"></div></div>
+    <div class="space-row"><code>--space-6</code><span>48px</span><div class="space-bar" style="width: var(--space-6)"></div></div>
+    <div class="space-row"><code>--space-7</code><span>64px</span><div class="space-bar" style="width: var(--space-7)"></div></div>
+    <div class="space-row"><code>--space-8</code><span>96px</span><div class="space-bar" style="width: var(--space-8)"></div></div>
+  </section>
+
+  <hr class="divider">
+  <p class="specimen__meta">
+    Alle Werte als CSS-Variablen: <a class="link" href="tokens.css">tokens.css</a>
+  </p>
+
+</main>
+</body>
+</html>
