@@ -58,7 +58,7 @@
   --h3-line-height: 1.55; /* 34.1px */
 
   --h4-size: 2.25rem; /* 36px */
-  --h4-weight: 600;
+  --h4-weight: 500; /* semibold — Arek maps semibold to 500 */
   --h4-line-height: 1.25; /* 45px */
 
   /* Type styles — body (Mulish) */
@@ -78,7 +78,7 @@
   --button-letter-spacing: 0.01em; /* 0.2px */
 
   --readmore-size: 1.2rem; /* 19.2px, rounded from 19px */
-  --readmore-weight: 600;
+  --readmore-weight: 500; /* semibold */
   --readmore-line-height: 1.35; /* 25.9px */
 
   /* Spacing around a heading. The source states these as fractions of the

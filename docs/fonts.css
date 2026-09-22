@@ -1,9 +1,12 @@
-/* Self-hosted rather than pulled from a CDN, so no visitor's IP reaches a third
-   party. Same files as the Storl Keycloak theme ships. */
+/* Self-hosted rather than pulled from a CDN: storl-akademie.de serves these
+   same files but sends no Access-Control-Allow-Origin, so a browser refuses
+   them cross-origin. The files here are byte-identical to that site's, and the
+   weight mapping matches it — Arek ships as regular, semibold and bold, and
+   semibold answers to 500. */
 
 @font-face {
   font-family: "arek";
-  src: url("assets/fonts/arek-22756-webfont.woff2") format("woff2");
+  src: url("assets/fonts/arek-latin-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -11,7 +14,7 @@
 
 @font-face {
   font-family: "arek";
-  src: url("assets/fonts/arek-22546-webfont.woff2") format("woff2");
+  src: url("assets/fonts/arek-latin-italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -19,17 +22,33 @@
 
 @font-face {
   font-family: "arek";
-  src: url("assets/fonts/arek-22541-webfont.woff2") format("woff2");
-  font-weight: 600;
+  src: url("assets/fonts/arek-latin-semibold.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "arek";
-  src: url("assets/fonts/arek-22539-webfont.woff2") format("woff2");
+  src: url("assets/fonts/arek-latin-semibold-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "arek";
+  src: url("assets/fonts/arek-latin-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "arek";
+  src: url("assets/fonts/arek-latin-bold-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 
