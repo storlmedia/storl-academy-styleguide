@@ -235,6 +235,12 @@
       <a href="#divider">Divider</a> eingesetzt.</p>
 
     <div class="grid grid--icons" id="icon-grid"></div>
+
+    <h3>Pfeile</h3>
+    <p>Für Navigation und Aufzählungen. Es gibt sie in Grape für helle
+      Hintergründe und in Weiß für farbige.</p>
+    <div class="grid grid--icons" id="arrow-grid"></div>
+    <div class="grid grid--icons grid--dark" id="arrow-grid-white"></div>
   </section>
 
   <section class="section" id="buttons">
@@ -464,7 +470,8 @@ formatSelect.addEventListener("change", () => {
 
 renderColors();
 
-// Tile list for the icon section — add a name here when a new icon lands in assets/icons/.
+// Tile lists for the icon section — add a name here when a new icon lands in
+// assets/icons/.
 const icons = [
   "amulett",
   "anbau",
@@ -512,15 +519,39 @@ const icons = [
   "winterpflanzen-1",
   "zugang"
 ];
-document.getElementById("icon-grid").innerHTML = icons.map(name =>
-  `<div class="icon-tile">
-     <img class="icon" src="assets/icons/svg/${name}.svg" alt="" loading="lazy">
-     <code>${name}</code>
-     <span class="icon-tile__files">
-       <a href="assets/icons/svg/${name}.svg" download>SVG</a>
-       <a href="assets/icons/png/${name}.png" download>PNG</a>
-     </span>
-   </div>`).join("");
+const arrows = [
+  "oben",
+  "unten",
+  "links",
+  "rechts",
+  "pfeil-rechts-dunn",
+  "pfeil-rechts-dick",
+  "pfeil-kreis"
+];
+
+const arrowsWhite = [
+  "oben-weiss",
+  "unten-weiss",
+  "links-weiss",
+  "rechts-weiss",
+  "pfeil-rechts-dick-weiss"
+];
+
+function renderIcons(id, names) {
+  document.getElementById(id).innerHTML = names.map(name =>
+    `<div class="icon-tile">
+       <img class="icon" src="assets/icons/svg/${name}.svg" alt="" loading="lazy">
+       <code>${name}</code>
+       <span class="icon-tile__files">
+         <a href="assets/icons/svg/${name}.svg" download>SVG</a>
+         <a href="assets/icons/png/${name}.png" download>PNG</a>
+       </span>
+     </div>`).join("");
+}
+
+renderIcons("icon-grid", icons);
+renderIcons("arrow-grid", arrows);
+renderIcons("arrow-grid-white", arrowsWhite);
 
 // Mark the section the reader is currently in.
 const links = new Map([...document.querySelectorAll(".sidebar__nav a")]

@@ -297,6 +297,28 @@ code {
   word-break: break-word;
 }
 
+.grid--dark {
+  background: var(--color-grape);
+  border-radius: 4px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.grid--dark .icon-tile {
+  border-color: var(--color-grape-light);
+  color: var(--color-grape-extra-light);
+}
+
+.grid--dark code {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+.grid--dark .icon-tile__files a {
+  color: var(--color-white);
+  border-bottom-color: var(--color-grape-light);
+}
+
 .icon-tile__files {
   display: flex;
   gap: 10px;
