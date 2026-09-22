@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Storl-Akademie Styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="styleguide.css">
 <link rel="stylesheet" href="components.css">
@@ -11,190 +14,351 @@
 <body>
 <main class="page">
 
-  <h1>Storl-Akademie Styleguide</h1>
+  <h1 class="page__title">Storl-Akademie Styleguide</h1>
   <p class="page__intro">
     Verbindliche Referenz für Farben, Schriften, Abstände und Komponenten auf
     storl-akademie.de. Gilt für Inhalte in Gutenberg und Elementor gleichermaßen.
+    Grundlage: Brand Guidelines 2026, Stand 03.09.2026.
   </p>
 
-  <p class="draft-note">
-    <strong>Entwurf.</strong> Alle Werte auf dieser Seite sind Platzhalter und
-    zeigen nur den Aufbau. Die echten Marken-Werte folgen.
-  </p>
+  <div class="note">
+    <p><strong>Noch offen:</strong></p>
+    <p>Die Schrift <em>Arek</em> liegt nicht als Webfont vor. Alle Überschriften
+      auf dieser Seite werden ersatzweise in einer Serifenschrift dargestellt und
+      sehen deshalb noch nicht richtig aus.</p>
+    <p>Logo und Signet fehlen als Dateien — unten steht ein Platzhalter.</p>
+  </div>
 
   <nav class="toc">
     <ul>
-      <li><a class="link" href="#farben">Farben</a></li>
-      <li><a class="link" href="#schriften">Schriften</a></li>
-      <li><a class="link" href="#logo">Logo</a></li>
-      <li><a class="link" href="#icons">Icons</a></li>
-      <li><a class="link" href="#komponenten">Komponenten</a></li>
-      <li><a class="link" href="#links">Links</a></li>
-      <li><a class="link" href="#abstaende">Abstände</a></li>
+      <li><a href="#farben">Farben</a></li>
+      <li><a href="#schriften">Schriften</a></li>
+      <li><a href="#typografie">Typografie</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#icons">Icons</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#divider">Divider</a></li>
+      <li><a href="#abstaende">Abstände</a></li>
     </ul>
   </nav>
 
   <section class="section" id="farben">
     <h2>Farben</h2>
-    <p>Der Name ist der verbindliche Bezug. In Gutenberg und Elementor werden die
-      globalen Farben genauso benannt, damit im Editor nicht nach Hex-Werten
+    <p>Der Name ist der verbindliche Bezug. Die globalen Farben in Gutenberg und
+      Elementor tragen dieselben Namen, damit im Editor nicht nach Hex-Werten
       gesucht werden muss.</p>
+
+    <h3>Primärfarben</h3>
     <div class="grid">
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-primary)"></div>
-        <div class="swatch__name">Primary</div>
-        <div class="swatch__meta">#2F5D3F · <code>--color-primary</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-primary-dark)"></div>
-        <div class="swatch__name">Primary Dark</div>
-        <div class="swatch__meta">#1F3F2A · <code>--color-primary-dark</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-accent)"></div>
-        <div class="swatch__name">Accent</div>
-        <div class="swatch__meta">#D98B2B · <code>--color-accent</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-text)"></div>
-        <div class="swatch__name">Text</div>
-        <div class="swatch__meta">#1C1C1C · <code>--color-text</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-text-muted)"></div>
-        <div class="swatch__name">Text Muted</div>
-        <div class="swatch__meta">#5E5E5E · <code>--color-text-muted</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-surface)"></div>
-        <div class="swatch__name">Surface</div>
-        <div class="swatch__meta">#F4F2ED · <code>--color-surface</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-border)"></div>
-        <div class="swatch__name">Border</div>
-        <div class="swatch__meta">#DDD8CF · <code>--color-border</code></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch__color" style="background: var(--color-background)"></div>
-        <div class="swatch__name">Background</div>
-        <div class="swatch__meta">#FFFFFF · <code>--color-background</code></div>
-      </div>
+      <div><div class="swatch__color" style="background: var(--color-grape-dark)"></div>
+        <div class="swatch__name">Grape dark</div>
+        <div class="swatch__meta">#593744<br><code>--color-grape-dark</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-grape)"></div>
+        <div class="swatch__name">Grape</div>
+        <div class="swatch__meta">#815B6C<br><code>--color-grape</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-light-yellow)"></div>
+        <div class="swatch__name">Light Yellow</div>
+        <div class="swatch__meta">#F0F0C9<br><code>--color-light-yellow</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-peach)"></div>
+        <div class="swatch__name">Peach</div>
+        <div class="swatch__meta">#E7BC9C<br><code>--color-peach</code></div></div>
+    </div>
+
+    <h3>Sekundärfarben</h3>
+    <div class="grid">
+      <div><div class="swatch__color" style="background: var(--color-grape-light)"></div>
+        <div class="swatch__name">Grape light</div>
+        <div class="swatch__meta">#B398A7<br><code>--color-grape-light</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-grape-extra-light)"></div>
+        <div class="swatch__name">Grape extra light</div>
+        <div class="swatch__meta">#E6DBE0<br><code>--color-grape-extra-light</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-grape-extra-light-3)"></div>
+        <div class="swatch__name">Grape extra light 3</div>
+        <div class="swatch__meta">#FBF4F6<br><code>--color-grape-extra-light-3</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-extra-light-yellow)"></div>
+        <div class="swatch__name">Extra light Yellow</div>
+        <div class="swatch__meta">#FCFCF0<br><code>--color-extra-light-yellow</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-peach-light)"></div>
+        <div class="swatch__name">Peach light</div>
+        <div class="swatch__meta">#F9E5D7<br><code>--color-peach-light</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-olive)"></div>
+        <div class="swatch__name">Olive</div>
+        <div class="swatch__meta">#496F56<br><code>--color-olive</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-moos)"></div>
+        <div class="swatch__name">Moos</div>
+        <div class="swatch__meta">#92AC7B<br><code>--color-moos</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-moos-light)"></div>
+        <div class="swatch__name">Moos light</div>
+        <div class="swatch__meta">#E7EBE4<br><code>--color-moos-light</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-lake)"></div>
+        <div class="swatch__name">Lake</div>
+        <div class="swatch__meta">#005167<br><code>--color-lake</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-arctic)"></div>
+        <div class="swatch__name">Arctic</div>
+        <div class="swatch__meta">#769998<br><code>--color-arctic</code></div></div>
+    </div>
+    <div class="note">
+      <p>Im Quelldokument tragen „Grape extra light“ und „Grape extra light 2“
+        denselben Hex-Wert. Bis das geklärt ist, gibt es hier nur eine der beiden.</p>
+    </div>
+
+    <h3>Schriftfarben</h3>
+    <div class="grid">
+      <div><div class="swatch__color" style="background: var(--color-body-text)"></div>
+        <div class="swatch__name">Body Text</div>
+        <div class="swatch__meta">#444444<br><code>--color-body-text</code></div></div>
+      <div><div class="swatch__color" style="background: var(--color-text-light-grey)"></div>
+        <div class="swatch__name">Text light Grey</div>
+        <div class="swatch__meta">#7A7A7A<br><code>--color-text-light-grey</code></div></div>
     </div>
   </section>
 
   <section class="section" id="schriften">
     <h2>Schriften</h2>
-    <p>Überschriften und Fließtext nutzen zwei getrennte Schriftfamilien. Die
-      Größen sind eine feste Leiter — keine Zwischenwerte im Editor eintragen.</p>
+    <p><strong>Arek</strong> für Überschriften, Buttons und den Weiterlesen-Link.
+      <strong>Mulish</strong> für Fließtext und alles andere. Andere Schriften
+      werden nicht eingesetzt.</p>
+  </section>
+
+  <section class="section" id="typografie">
+    <h2>Typografie</h2>
+    <p>Die Größen sind feste Stile. Im Editor werden keine Zwischenwerte
+      eingetragen — wenn ein Stil fehlt, wird er hier ergänzt.</p>
 
     <div class="specimen">
-      <div style="font-family: var(--font-heading); font-size: var(--text-3xl)">Überschrift 1</div>
-      <div class="specimen__meta">Heading · 2.5rem / 40px · <code>--text-3xl</code></div>
+      <div class="h1">Herzlich Willkommen zum Onlinekurs</div>
+      <div class="specimen__meta"><b>H1</b> · Arek · 41,6px · 500 medium ·
+        Zeilenhöhe 45px · Laufweite 0,2px · Grape</div>
     </div>
     <div class="specimen">
-      <div style="font-family: var(--font-heading); font-size: var(--text-2xl)">Überschrift 2</div>
-      <div class="specimen__meta">Heading · 2rem / 32px · <code>--text-2xl</code></div>
+      <div class="h2">Herzlich Willkommen in der</div>
+      <div class="specimen__meta"><b>H2</b> · Arek · 24px · kursiv · 400 ·
+        Zeilenhöhe 30px · Grape<br>Zwischenüberschrift über Texten</div>
     </div>
     <div class="specimen">
-      <div style="font-family: var(--font-heading); font-size: var(--text-xl)">Überschrift 3</div>
-      <div class="specimen__meta">Heading · 1.5rem / 24px · <code>--text-xl</code></div>
+      <div class="h3">Lerne 24 heimische Pflanzen kennen</div>
+      <div class="specimen__meta"><b>H3</b> · Arek · 22px · 400 ·
+        Zeilenhöhe 34px · Grape light oder Moos<br>Subheadline über oder unter
+        Überschriften</div>
     </div>
     <div class="specimen">
-      <div style="font-size: var(--text-lg)">Vorspann oder hervorgehobener Absatz</div>
-      <div class="specimen__meta">Body · 1.25rem / 20px · <code>--text-lg</code></div>
+      <div class="h4">Wolf-Dieter Storl</div>
+      <div class="specimen__meta"><b>H4</b> · Arek · 36px · semibold ·
+        Zeilenhöhe 45px · Moos<br>Nur in bestimmtem Kontext, z. B. Referenten-Namen
+        und Kurskacheln</div>
     </div>
     <div class="specimen">
-      <div>Fließtext. Der Standard für alle Absätze auf der Website.</div>
-      <div class="specimen__meta">Body · 1rem / 16px · <code>--text-base</code></div>
+      <div class="intro">Lerne zahlreiche Heilpflanzen in Theorie &amp;
+        praktischen Rezepten kennen. In deinem eigenen Tempo und ganz bequem von
+        zu Hause.</div>
+      <div class="specimen__meta"><b>Intro-Fließtext</b> · Mulish · 24px ·
+        medium · Zeilenhöhe 34px · Body Text<br>Für hervorgehobenen Fließtext,
+        z. B. auf der Startseite</div>
     </div>
     <div class="specimen">
-      <div style="font-size: var(--text-sm)">Bildunterschrift, Hinweis, Fußnote</div>
-      <div class="specimen__meta">Body · 0.875rem / 14px · <code>--text-sm</code></div>
+      <div class="body">Die kanadische Goldrute, eine äußerst vitale, hohe Staude
+        mit goldgelben Blütenschweif, kam im 17. Jahrhundert nach Europa und wurde
+        bald zur neusten Gartenmode.</div>
+      <div class="specimen__meta"><b>Fließtext</b> · Mulish · 19px · regular ·
+        Zeilenhöhe 32px · Body Text</div>
+    </div>
+    <div class="specimen">
+      <div class="body"><strong>Rainfarn (Tanacetum vulgare):</strong> Der
+        Rainfarn hat ebenfalls gelbe Blüten, dazu eine
+        <strong class="highlight">farbliche Hervorhebung</strong> in Grape.</div>
+      <div class="specimen__meta"><b>Hervorhebung &amp; Bullets</b> · Mulish ·
+        19px · bold · Zeilenhöhe 32px · Body Text oder Grape</div>
     </div>
   </section>
 
   <section class="section" id="logo">
     <h2>Logo</h2>
-    <p>Platzhalter. Hier stehen später die Logo-Varianten, der Mindest-Schutzraum
-      und die kleinstmögliche Größe.</p>
     <div class="demo demo--block">
       <img src="assets/logo/logo-placeholder.svg" alt="Logo-Platzhalter" width="240" height="48">
     </div>
-    <p class="specimen__meta">Quelle: <code>assets/logo/</code></p>
+
+    <h3>Farbgebung</h3>
+    <p>Auf hellem Grund steht Logo und Signet in <strong>Grape</strong>, auf
+      farbigen Hintergründen in <strong>Weiß</strong>. Andere Farbvarianten werden
+      vermieden.</p>
+
+    <h3>Schutzraum</h3>
+    <p>Rund um das Logo bleibt mindestens die Höhe und Breite des
+      Akademie-Anfangsbuchstabens „A“ frei. Passt das nicht, wird das Logo
+      verkleinert statt der Schutzraum verringert. Beim Signet ist der Schutzraum
+      der halbe Kreisradius.</p>
+
+    <h3>Mindestgröße</h3>
+    <p>Im Web und in der App <strong>115px breit</strong> (bei 72 dpi), im Druck
+      <strong>25mm</strong> (bei 300 dpi). Nach oben ist die Größe frei, solange
+      Proportionen und Schutzraum stimmen.</p>
   </section>
 
   <section class="section" id="icons">
     <h2>Icons</h2>
-    <p>Aus Figma exportierte SVGs. Sie übernehmen die Textfarbe, in der sie
-      stehen, und werden nach dem benannt, was sie zeigen.</p>
-    <div class="grid">
-      <div class="icon-tile">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>
-        <code>arrow-right</code>
-      </div>
-      <div class="icon-tile">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-        <code>calendar</code>
-      </div>
-      <div class="icon-tile">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/></svg>
-        <code>download</code>
-      </div>
-    </div>
-    <p class="specimen__meta">Quelle: <code>assets/icons/</code></p>
+    <p>Alle Icons liegen als SVG und PNG unter <code>assets/icons/</code>. Sie
+      sind in Grape (#815B6C) gezeichnet und bringen ihre Farbe selbst mit — sie
+      übernehmen <em>nicht</em> die Textfarbe der Umgebung.</p>
+
+    <h3>Einsatz</h3>
+    <p><strong>Illustrierte Icons</strong> stehen auf Kursseiten und zeigen
+      Leistungen und Kursbestandteile auf einen Blick.
+      <strong>Saisonale Pflanzen-Icons</strong> (Frühlings-, Sommer-, Herbst-,
+      Winterpflanzen) ordnen Inhalte einer Jahreszeit zu.
+      Zusammen mit einer Linie werden Icons außerdem als
+      <a href="#divider">Divider</a> eingesetzt.</p>
+
+    <div class="grid grid--icons" id="icon-grid"></div>
   </section>
 
-  <section class="section" id="komponenten">
-    <h2>Komponenten</h2>
+  <section class="section" id="buttons">
+    <h2>Buttons</h2>
 
-    <h3>Button</h3>
-    <p>Primär für die wichtigste Aktion einer Seite, sekundär für alles daneben.
-      Pro Abschnitt höchstens ein primärer Button.</p>
+    <h3>Primary Button</h3>
+    <p>Verlinkt auf <strong>interne</strong> Inhalte und Seiten außerhalb der
+      Akademie-Seite. Steht auf weißem Hintergrund.</p>
     <div class="demo">
-      <a class="button button--primary" href="#komponenten">Jetzt anmelden</a>
-      <a class="button button--secondary" href="#komponenten">Mehr erfahren</a>
+      <a class="button button--primary" href="#buttons">Kurs entdecken</a>
+      <span class="specimen__meta">Moos → Olive beim Hover · Schrift weiß</span>
     </div>
-    <p class="specimen__meta">Innenabstand 8px / 24px · Radius 4px</p>
 
-    <h3>Trennlinie</h3>
-    <p>Trennt Abschnitte innerhalb eines Textes. Nicht als Dekoration einsetzen.</p>
-    <div class="demo demo--block">
-      <p>Abschnitt davor.</p>
-      <hr class="divider">
-      <p>Abschnitt danach.</p>
+    <h3>Secondary Button</h3>
+    <p>Verlinkt auf <strong>externe</strong> Inhalte außerhalb der
+      Akademie-Seite. Steht auf farbigen Flächen, z. B. im Newsletter-Modul oder
+      im Footer.</p>
+    <div class="demo demo--grape">
+      <a class="button button--secondary" href="#buttons">Newsletter abonnieren</a>
+      <span class="specimen__meta" style="color: var(--color-white)">Peach →
+        Light Yellow beim Hover · Schrift weiß, im Hover Grape</span>
     </div>
+
+    <h3>Maße</h3>
+    <p>Arek · 20px · 500 medium · Zeilenhöhe 30px · Laufweite 0,2px. Abstand vom
+      Text zum Button-Rand: 25px links und rechts. Text mittig zentriert.</p>
   </section>
 
   <section class="section" id="links">
     <h2>Links</h2>
-    <p>Links im Fließtext sind immer unterstrichen — Farbe allein reicht als
-      Erkennungsmerkmal nicht aus.</p>
+    <p>Textlinks im Fließtext stehen in der <strong>Bold-Variante</strong> der
+      Textschrift. Die Farbe sagt, wohin der Link führt.</p>
     <div class="demo demo--block">
-      <p>Die Kurstermine stehen im
-        <a class="link" href="#links">Veranstaltungskalender</a>.</p>
+      <p class="body" style="margin-top: 0">Die Termine stehen im
+        <a class="link link--internal" href="#links">Jahreskurs</a> — das ist ein
+        Link innerhalb der Akademie-Seite.</p>
+      <p class="body" style="margin-bottom: 0">Mehr Hintergründe gibt es auf
+        <a class="link link--external" href="#links">Storl.de</a> — das ist ein
+        Link auf externe Inhalte.</p>
     </div>
+
+    <h3>Weiterlesen-Link</h3>
+    <p>Steht unter einem gekürzten Text, mittig, mit Pfeil nach unten. Abstand
+      zum Text: 24px.</p>
+    <div class="demo" style="justify-content: center">
+      <a class="readmore" href="#links">Weiterlesen
+        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l8 8 8-8"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="divider">
+    <h2>Divider</h2>
+    <p>Eine Linie mit einem Icon in der Mitte trennt Abschnitte innerhalb einer
+      Lektion und kündigt an, was folgt. Es gibt Divider zu
+      Heilpflanzen, Brauchtum, Erkennungsmerkmalen, Küche, Rezepten und
+      Meditation sowie einen generischen mit dem Akademie-Blatt.</p>
+    <div class="demo demo--block">
+      <p class="body">Text davor.</p>
+      <div class="divider">
+        <img class="divider__icon" src="assets/icons/svg/kueche.svg" alt="">
+      </div>
+      <p class="body" style="margin-bottom: 0">Text danach.</p>
+    </div>
+    <p>Das Illustrationselement sitzt mittig in einem Band von 135px Höhe.</p>
   </section>
 
   <section class="section" id="abstaende">
     <h2>Abstände</h2>
-    <p>Alle Abstände stammen aus dieser Leiter. Werte dazwischen werden im Editor
-      nicht eingetragen.</p>
-    <div class="space-row"><code>--space-1</code><span>4px</span><div class="space-bar" style="width: var(--space-1)"></div></div>
-    <div class="space-row"><code>--space-2</code><span>8px</span><div class="space-bar" style="width: var(--space-2)"></div></div>
-    <div class="space-row"><code>--space-3</code><span>16px</span><div class="space-bar" style="width: var(--space-3)"></div></div>
-    <div class="space-row"><code>--space-4</code><span>24px</span><div class="space-bar" style="width: var(--space-4)"></div></div>
-    <div class="space-row"><code>--space-5</code><span>32px</span><div class="space-bar" style="width: var(--space-5)"></div></div>
-    <div class="space-row"><code>--space-6</code><span>48px</span><div class="space-bar" style="width: var(--space-6)"></div></div>
-    <div class="space-row"><code>--space-7</code><span>64px</span><div class="space-bar" style="width: var(--space-7)"></div></div>
-    <div class="space-row"><code>--space-8</code><span>96px</span><div class="space-bar" style="width: var(--space-8)"></div></div>
+    <p>Die senkrechten Abstände hängen an der Überschriftenhöhe von
+      <strong>40px</strong>. Ändert sich eine Überschrift, ändern sich die
+      Abstände mit.</p>
+    <table class="spacing-table">
+      <thead>
+        <tr><th>Wo</th><th>Wert</th><th>Token</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Zwischen Modulen und Elementen</td><td>100px</td><td><code>--space-module</code></td></tr>
+        <tr><td>Über einer Überschrift</td><td>40px (1 Überschriftenhöhe)</td><td><code>--space-above-heading</code></td></tr>
+        <tr><td>Zwischen Überschrift und Text</td><td>13px (⅓ Überschriftenhöhe)</td><td><code>--space-below-heading</code></td></tr>
+        <tr><td>Zwischen Subline und Überschrift</td><td>10px (¼ Überschriftenhöhe)</td><td><code>--space-subline</code></td></tr>
+        <tr><td>Text über einem Bild</td><td>40px</td><td><code>--space-text-image</code></td></tr>
+        <tr><td>Bild über folgendem Text</td><td>70px</td><td><code>--space-image-text</code></td></tr>
+        <tr><td>Text zum Weiterlesen-Link</td><td>24px</td><td><code>--space-text-link</code></td></tr>
+        <tr><td>Band für Divider-Illustrationen</td><td>135px</td><td><code>--divider-block</code></td></tr>
+      </tbody>
+    </table>
   </section>
 
-  <hr class="divider">
-  <p class="specimen__meta">
-    Alle Werte als CSS-Variablen: <a class="link" href="tokens.css">tokens.css</a>
+  <p class="page__footer">
+    Alle Werte als CSS-Variablen: <a href="tokens.css">tokens.css</a>
   </p>
 
 </main>
+
+<script>
+// Tile list for the icon section — add a name here when a new icon lands in assets/icons/.
+const icons = [
+  "amulett",
+  "anbau",
+  "anwendung",
+  "astorlogische",
+  "aussaatinfo",
+  "begleitbuch",
+  "begleitung-jahr",
+  "betreuung",
+  "blatt-div",
+  "blatt-div-1",
+  "brauchtum",
+  "community",
+  "dauer",
+  "download",
+  "erkennungsmerkmale",
+  "fachartikel",
+  "fruehlingspflanzen",
+  "heilwirkung",
+  "herbstpflanzen",
+  "hinweis_icon",
+  "impulse",
+  "info",
+  "kueche",
+  "kursmaterial",
+  "kurspaket",
+  "lernfortschritt",
+  "literatur",
+  "maerchen_1",
+  "meditation",
+  "pflanzenpersoenlichkeiten",
+  "portrait",
+  "push",
+  "rezepte",
+  "schluessel",
+  "sommerpflanzen",
+  "staatliche-zulassung",
+  "tee",
+  "teilnahmezertifikat",
+  "tinktur",
+  "videolektion",
+  "videomaterial",
+  "willkommenspaket",
+  "winterpflanzen",
+  "winterpflanzen-1",
+  "zugang"
+];
+document.getElementById("icon-grid").innerHTML = icons.map(name =>
+  `<div class="icon-tile">
+     <img class="icon" src="assets/icons/svg/${name}.svg" alt="" loading="lazy">
+     <code>${name}</code>
+   </div>`).join("");
+</script>
 </body>
 </html>

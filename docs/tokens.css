@@ -1,42 +1,92 @@
-/* Design tokens — PLACEHOLDER VALUES, not yet the Storl Academy brand. */
+/* Storl-Akademie design tokens.
+   Source: Storl-Akademie Brand Guidelines 2026, Stand 03.09.2026. */
 
 :root {
-  /* Colors */
-  --color-primary: #2f5d3f;
-  --color-primary-dark: #1f3f2a;
-  --color-accent: #d98b2b;
-  --color-text: #1c1c1c;
-  --color-text-muted: #5e5e5e;
-  --color-background: #ffffff;
-  --color-surface: #f4f2ed;
-  --color-border: #ddd8cf;
+  /* Primary colors */
+  --color-grape-dark: #593744;
+  --color-grape: #815b6c;
+  --color-light-yellow: #f0f0c9;
+  --color-peach: #e7bc9c;
 
-  /* Typography */
-  --font-heading: Georgia, "Times New Roman", serif;
-  --font-body: "Helvetica Neue", Arial, sans-serif;
+  /* Secondary colors */
+  --color-grape-light: #b398a7;
+  --color-grape-extra-light: #e6dbe0;
+  /* "Grape extra light 2" carries the same hex as "Grape extra light" in the
+     source document. Kept out until the designer clarifies. */
+  --color-grape-extra-light-3: #fbf4f6;
+  --color-extra-light-yellow: #fcfcf0;
+  --color-peach-light: #f9e5d7;
+  --color-olive: #496f56;
+  --color-moos: #92ac7b;
+  --color-moos-light: #e7ebe4;
+  --color-lake: #005167;
+  --color-arctic: #769998;
 
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-base: 1rem; /* 16px */
-  --text-lg: 1.25rem; /* 20px */
-  --text-xl: 1.5rem; /* 24px */
-  --text-2xl: 2rem; /* 32px */
-  --text-3xl: 2.5rem; /* 40px */
+  /* Text colors */
+  --color-body-text: #444444;
+  --color-text-light-grey: #7a7a7a;
 
-  --leading-tight: 1.2;
-  --leading-normal: 1.6;
+  --color-white: #ffffff;
 
-  /* Spacing — 8px scale */
-  --space-1: 0.25rem; /* 4px */
-  --space-2: 0.5rem; /* 8px */
-  --space-3: 1rem; /* 16px */
-  --space-4: 1.5rem; /* 24px */
-  --space-5: 2rem; /* 32px */
-  --space-6: 3rem; /* 48px */
-  --space-7: 4rem; /* 64px */
-  --space-8: 6rem; /* 96px */
+  /* Font families */
+  --font-heading: "Arek", Georgia, "Times New Roman", serif;
+  --font-body: "Mulish", "Helvetica Neue", Arial, sans-serif;
 
-  /* Misc */
-  --radius: 4px;
-  --border-width: 1px;
+  /* Type styles — headings (Arek) */
+  --h1-size: 41.6px;
+  --h1-weight: 500;
+  --h1-line-height: 45px;
+  --h1-letter-spacing: 0.2px;
+
+  --h2-size: 24px;
+  --h2-weight: 400;
+  --h2-line-height: 30px;
+
+  --h3-size: 22px;
+  --h3-weight: 400;
+  --h3-line-height: 34px;
+
+  --h4-size: 36px;
+  --h4-weight: 600;
+  --h4-line-height: 45px;
+
+  /* Type styles — body (Mulish) */
+  --intro-size: 24px;
+  --intro-weight: 500;
+  --intro-line-height: 34px;
+
+  --body-size: 19px;
+  --body-weight: 400;
+  --body-line-height: 32px;
+  --body-bold-weight: 700;
+
+  /* Type styles — interactive (Arek) */
+  --button-size: 20px;
+  --button-weight: 500;
+  --button-line-height: 30px;
+  --button-letter-spacing: 0.2px;
+
+  --readmore-size: 19px;
+  --readmore-weight: 600;
+  --readmore-line-height: 26px;
+
+  /* Spacing. Vertical rhythm is derived from the heading height, so these
+     stay in step when a heading size changes. */
+  --heading-height: 40px;
+  --space-module: 100px; /* between modules and elements */
+  --space-above-heading: 40px; /* 1 × heading height */
+  --space-below-heading: 13px; /* 1/3 × heading height */
+  --space-subline: 10px; /* 1/4 × heading height */
+  --space-text-image: 40px;
+  --space-image-text: 70px;
+  --space-text-link: 24px;
+  --divider-block: 135px; /* height of the band a divider illustration sits in */
+
+  /* Buttons */
+  --button-padding-x: 25px;
+  --button-padding-y: 12px;
+  --button-radius: 6px; /* not defined in the source document */
+
+  /* Logo */
+  --logo-min-width: 115px;
 }
