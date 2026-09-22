@@ -25,6 +25,7 @@
       <li><a href="#links">Links</a></li>
       <li><a href="#divider">Divider</a></li>
       <li><a href="#abstaende">Abstände</a></li>
+      <li><a href="#beispiele">Layout-Beispiele</a></li>
     </ul>
   </nav>
 </aside>
@@ -325,10 +326,10 @@
         <tr><th>Wo</th><th>Wert</th><th>Ergibt</th><th>Token</th></tr>
       </thead>
       <tbody>
-        <tr><td>Über einer Überschrift</td><td>1em</td><td>1 Überschriftenhöhe</td><td><code>--space-above-heading</code></td></tr>
-        <tr><td>Zwischen Überschrift und Text</td><td>0.333em</td><td>⅓ Überschriftenhöhe</td><td><code>--space-below-heading</code></td></tr>
         <tr><td>Zwischen Subline und Überschrift</td><td>0.25em</td><td>¼ Überschriftenhöhe</td><td><code>--space-subline</code></td></tr>
+        <tr><td>Zwischen Überschrift und Text</td><td>0.333em</td><td>⅓ Überschriftenhöhe</td><td><code>--space-below-heading</code></td></tr>
         <tr><td>Zwischen Text und folgender Unterüberschrift</td><td>1.333em</td><td>1⅓ Überschriftenhöhe</td><td><code>--space-text-subheading</code></td></tr>
+        <tr><td>Nach einer Divider-Überschrift</td><td>1em</td><td>1 Überschriftenhöhe</td><td><code>--space-after-divider-heading</code></td></tr>
         <tr><td>Zwischen Modulen und Elementen</td><td>6.25rem</td><td>100px</td><td><code>--space-module</code></td></tr>
         <tr><td>Text über einem Bild</td><td>2.5rem</td><td>40px</td><td><code>--space-text-image</code></td></tr>
         <tr><td>Bild über folgendem Text</td><td>4.5rem</td><td>72px</td><td><code>--space-image-text</code></td></tr>
@@ -344,10 +345,131 @@
       liegen deshalb auf der nächsten runden Stufe: 70px auf 4.5rem (72px),
       135px auf 8.5rem (136px), der Fließtext von 19px auf 1.2rem (19.2px).
       Mehr als 2px weicht nichts ab.</p>
-    <div class="note">
-      <p>Der Styleguide nennt für „Abstand zwischen Überschrift und Text“ je
-        nach Layout-Beispiel ⅓, ½ oder eine ganze Überschriftenhöhe. Hier steht
-        ⅓, bis geklärt ist, was wann gilt.</p>
+    <p>„Überschriftenhöhe“ ist die Höhe der Überschrift selbst, im Styleguide
+      mit 40px angegeben. Sie ist das Maß, auf das sich die Brüche beziehen —
+      kein Abstand. In den <a href="#beispiele">Beispielen</a> ist sie in den
+      Mockups als Referenz mit eingezeichnet.</p>
+  </section>
+
+  <section class="section" id="beispiele">
+    <h2>Layout-Beispiele</h2>
+    <p>Die Mockups aus dem Styleguide, hier als echtes HTML. Die eingezeichneten
+      Bänder sind keine Grafik — sie sind so hoch, wie der jeweilige Abstand
+      wirklich ist, und ändern sich mit, wenn sich ein Wert ändert.</p>
+
+    <h3>Überschrift und Fließtext</h3>
+    <div class="spec">
+      <div class="spec__frame">
+        <div class="spec__ghost"></div>
+        <div class="spec__gap" style="--gap: var(--space-module)">
+          <span class="spec__note"><b>Abstand zwischen Modulen/Elementen</b>
+            6.25rem <span>(100px)</span></span>
+        </div>
+        <div class="h1" style="text-align: center">Erkennungsmerkmale und
+          Verwechslungsgefahren</div>
+        <div class="spec__gap" style="--gap: calc(var(--h1-size) * 0.333)">
+          <span class="spec__note"><b>Überschrift zu Text</b>
+            ⅓ der Überschriftenhöhe</span>
+        </div>
+        <p class="body" style="margin: 0">Die kanadische Goldrute, eine äußerst
+          vitale, hohe Staude mit goldgelben Blütenschweif, kam im 17.
+          Jahrhundert nach Europa und wurde bald zur neusten Gartenmode.</p>
+        <div class="spec__gap" style="--gap: var(--space-module)">
+          <span class="spec__note"><b>Abstand zwischen Modulen/Elementen</b>
+            6.25rem <span>(100px)</span></span>
+        </div>
+        <div class="spec__ghost"></div>
+      </div>
+    </div>
+
+    <h3>Subline, Überschrift und Text</h3>
+    <div class="spec">
+      <div class="spec__frame">
+        <div class="h3 h3--moos">Herzlich Willkommen in der</div>
+        <div class="spec__gap" style="--gap: calc(var(--h1-size) * 0.25)">
+          <span class="spec__note"><b>Subline zu Überschrift</b>
+            ¼ der Überschriftenhöhe</span>
+        </div>
+        <div class="h1">Storl Akademie</div>
+        <div class="spec__gap" style="--gap: calc(var(--h1-size) * 0.333)">
+          <span class="spec__note"><b>Überschrift zu Text</b>
+            ⅓ der Überschriftenhöhe</span>
+        </div>
+        <p class="body" style="margin: 0 0 24px">Lerne zahlreiche Heilpflanzen in
+          Theorie &amp; praktischen Rezepten kennen. In deinem eigenen Tempo und
+          ganz bequem von zu Hause.</p>
+        <a class="button button--primary" href="#beispiele">Kurs entdecken</a>
+      </div>
+    </div>
+
+    <h3>Text und folgende Unterüberschrift</h3>
+    <div class="spec">
+      <div class="spec__frame">
+        <p class="body" style="margin: 0">Ich wünsche dir viele Erkenntnisse und
+          Freude an den Pflanzen,</p>
+        <div class="spec__gap" style="--gap: calc(var(--h4-size) * 1.333)">
+          <span class="spec__note"><b>Text zu Unterüberschrift</b>
+            1⅓ der Überschriftenhöhe</span>
+        </div>
+        <div class="h4">Wolf-Dieter Storl</div>
+      </div>
+    </div>
+
+    <h3>Divider</h3>
+    <div class="spec">
+      <div class="spec__frame">
+        <p class="body" style="margin: 0">…Urämie und Harngrieß. Von der aus
+          Nordamerika eingebürgerten „falschen“ Goldrute hielt er nicht allzu
+          viel.</p>
+        <div class="spec__gap" style="--gap: var(--space-module)">
+          <span class="spec__note"><b>Text zu Element</b>
+            6.25rem <span>(100px)</span></span>
+        </div>
+        <div class="spec__band">
+          <div class="divider">
+            <img class="divider__icon" src="assets/icons/svg/heilwirkung.svg" alt="">
+          </div>
+          <span class="spec__note"><b>Band für das Illustrations-Element</b>
+            8.5rem <span>(136px), Icon mittig zentriert</span></span>
+        </div>
+        <div class="h1" style="text-align: center">Heilpflanze</div>
+        <div class="spec__gap" style="--gap: calc(var(--h1-size) * 1)">
+          <span class="spec__note"><b>Nach der Divider-Überschrift</b>
+            1 Überschriftenhöhe</span>
+        </div>
+        <p class="body" style="margin: 0">Von der Heilkraft der amerikanischen
+          Goldrute war mir nichts bekannt, bis ich vor einigen Jahren an der
+          Sheridan-College eine Vorlesung über Heilkräuter hielt.</p>
+      </div>
+    </div>
+
+    <h3>Bild und Weiterlesen-Link</h3>
+    <div class="spec">
+      <div class="spec__frame">
+        <p class="body" style="margin: 0">…und hatte dunkle Ringe unter den
+          Augen.</p>
+        <div class="spec__gap" style="--gap: var(--space-text-image)">
+          <span class="spec__note"><b>Text zu Bild</b>
+            2.5rem <span>(40px)</span></span>
+        </div>
+        <div class="spec__image"></div>
+        <div class="spec__gap" style="--gap: var(--space-image-text)">
+          <span class="spec__note"><b>Bild zu Text</b>
+            4.5rem <span>(72px)</span></span>
+        </div>
+        <p class="body" style="margin: 0">Inzwischen haben Wissenschaftler die
+          Unterschiede zwischen der „echten“ und der „falschen“ Goldrute
+          untersuchen lassen.</p>
+        <div class="spec__gap" style="--gap: var(--space-text-link)">
+          <span class="spec__note"><b>Text zum Weiterlesen-Link</b>
+            1.5rem <span>(24px)</span></span>
+        </div>
+        <div style="text-align: center">
+          <a class="readmore" href="#beispiele">Weiterlesen
+            <svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l8 8 8-8"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 

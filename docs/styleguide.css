@@ -352,6 +352,91 @@ code {
 
 .spacing-table th { color: var(--color-text-light-grey); font-weight: 600; }
 
+/* Annotated layout examples. Each gap is a real element of the specified
+   height, so the mockups stay honest if a token changes. */
+.spec {
+  padding-right: 17rem;
+  margin-bottom: 56px;
+}
+
+.spec__frame {
+  border: 1px dashed var(--color-grape-extra-light);
+  border-radius: 4px;
+  padding: 24px 32px;
+}
+
+.spec__ghost {
+  background: var(--color-grape-extra-light);
+  border-radius: 2px;
+  height: 56px;
+}
+
+.spec__image {
+  background: var(--color-moos-light);
+  border-radius: 2px;
+  height: 180px;
+}
+
+/* wraps an element that is itself the measured block, such as a divider */
+.spec__band {
+  position: relative;
+  border-top: 1px dashed var(--color-peach);
+  border-bottom: 1px dashed var(--color-peach);
+}
+
+.spec__gap {
+  position: relative;
+  height: var(--gap);
+  border-top: 1px solid var(--color-peach);
+  border-bottom: 1px solid var(--color-peach);
+}
+
+/* the measuring line down the middle of the gap */
+.spec__gap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--color-peach);
+}
+
+.spec__note {
+  position: absolute;
+  left: calc(100% + 24px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15rem;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--color-grape);
+}
+
+.spec__note b {
+  display: block;
+  font-weight: 700;
+}
+
+.spec__note span {
+  color: var(--color-text-light-grey);
+}
+
+@media (max-width: 60rem) {
+  .spec { padding-right: 0; }
+
+  .spec__gap { height: auto; min-height: var(--gap); }
+
+  .spec__note {
+    position: static;
+    transform: none;
+    width: auto;
+    padding: 4px 0 4px 12px;
+    border-left: 2px solid var(--color-peach);
+  }
+
+  .spec__gap::before { display: none; }
+}
+
 .page__footer {
   border-top: 1px solid var(--color-grape-extra-light);
   padding-top: 24px;
