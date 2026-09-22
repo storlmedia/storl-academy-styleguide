@@ -3,6 +3,8 @@
 The binding reference for colors, fonts, spacing and components on
 storl-akademie.de.
 
+**→ https://storlmedia.github.io/storl-academy-styleguide/**
+
 ## Ground rules
 
 - The styleguide is the target, not a description of the site today. Where the
