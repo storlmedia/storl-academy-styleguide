@@ -6,7 +6,11 @@
    assume that. em is used where the source states a ratio rather than a
    measurement: those tokens resolve against the font size of the element they
    are set on, which is noted at each one. Line heights are unitless so they
-   keep their ratio when a size changes. */
+   keep their ratio when a size changes.
+
+   A few values from the source document do not divide by 16 and would end up
+   as 1.1875rem or 8.4375rem. Those are rounded to the nearest sensible step,
+   never by more than 2px; each one says so. */
 
 :root {
   /* Primary colors */
@@ -42,8 +46,8 @@
   /* Type styles — headings (Arek) */
   --h1-size: 2.6rem; /* 41.6px */
   --h1-weight: 500;
-  --h1-line-height: 1.082; /* 45px */
-  --h1-letter-spacing: 0.0125rem; /* 0.2px */
+  --h1-line-height: 1.08; /* 44.9px */
+  --h1-letter-spacing: 0.005em; /* 0.2px */
 
   --h2-size: 1.5rem; /* 24px */
   --h2-weight: 400;
@@ -51,7 +55,7 @@
 
   --h3-size: 1.375rem; /* 22px */
   --h3-weight: 400;
-  --h3-line-height: 1.545; /* 34px */
+  --h3-line-height: 1.55; /* 34.1px */
 
   --h4-size: 2.25rem; /* 36px */
   --h4-weight: 600;
@@ -60,22 +64,22 @@
   /* Type styles — body (Mulish) */
   --intro-size: 1.5rem; /* 24px */
   --intro-weight: 500;
-  --intro-line-height: 1.417; /* 34px */
+  --intro-line-height: 1.42; /* 34.1px */
 
-  --body-size: 1.1875rem; /* 19px */
+  --body-size: 1.2rem; /* 19.2px, rounded from 19px */
   --body-weight: 400;
-  --body-line-height: 1.684; /* 32px */
+  --body-line-height: 1.7; /* 32.6px */
   --body-bold-weight: 700;
 
   /* Type styles — interactive (Arek) */
   --button-size: 1.25rem; /* 20px */
   --button-weight: 500;
   --button-line-height: 1.5; /* 30px */
-  --button-letter-spacing: 0.0125rem; /* 0.2px */
+  --button-letter-spacing: 0.01em; /* 0.2px */
 
-  --readmore-size: 1.1875rem; /* 19px */
+  --readmore-size: 1.2rem; /* 19.2px, rounded from 19px */
   --readmore-weight: 600;
-  --readmore-line-height: 1.368; /* 26px */
+  --readmore-line-height: 1.35; /* 25.9px */
 
   /* Spacing around a heading. The source states these as fractions of the
      heading height, so they are set on the heading itself and follow its size. */
@@ -87,9 +91,9 @@
      text, so they stay absolute. */
   --space-module: 6.25rem; /* 100px */
   --space-text-image: 2.5rem; /* 40px */
-  --space-image-text: 4.375rem; /* 70px */
+  --space-image-text: 4.5rem; /* 72px, rounded from 70px */
   --space-text-link: 1.5rem; /* 24px */
-  --divider-block: 8.4375rem; /* 135px, height of the band a divider sits in */
+  --divider-block: 8.5rem; /* 136px, rounded from 135px — height of the band a divider sits in */
 
   /* Buttons. The padding follows the button's own text size. */
   --button-padding-x: 1.25em; /* 25px */
