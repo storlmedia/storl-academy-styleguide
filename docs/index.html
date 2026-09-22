@@ -10,7 +10,26 @@
 <link rel="stylesheet" href="components.css">
 </head>
 <body>
-<main class="page">
+<div class="layout">
+
+<aside class="sidebar">
+  <a class="sidebar__brand" href="#top">Storl-Akademie<br>Styleguide</a>
+  <nav class="sidebar__nav">
+    <ul>
+      <li><a href="#farben">Farben</a></li>
+      <li><a href="#schriften">Schriften</a></li>
+      <li><a href="#typografie">Typografie</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#icons">Icons</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#divider">Divider</a></li>
+      <li><a href="#abstaende">Abstände</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="page" id="top">
 
   <h1 class="page__title">Storl-Akademie Styleguide</h1>
   <p class="page__intro">
@@ -27,20 +46,6 @@
       kursiv statt semibold kursiv.</p>
     <p>Logo und Signet fehlen als Dateien — unten steht ein Platzhalter.</p>
   </div>
-
-  <nav class="toc">
-    <ul>
-      <li><a href="#farben">Farben</a></li>
-      <li><a href="#schriften">Schriften</a></li>
-      <li><a href="#typografie">Typografie</a></li>
-      <li><a href="#logo">Logo</a></li>
-      <li><a href="#icons">Icons</a></li>
-      <li><a href="#buttons">Buttons</a></li>
-      <li><a href="#links">Links</a></li>
-      <li><a href="#divider">Divider</a></li>
-      <li><a href="#abstaende">Abstände</a></li>
-    </ul>
-  </nav>
 
   <section class="section" id="farben">
     <h2>Farben</h2>
@@ -304,6 +309,8 @@
 
 </main>
 
+</div>
+
 <script>
 // Tile list for the icon section — add a name here when a new icon lands in assets/icons/.
 const icons = [
@@ -358,6 +365,16 @@ document.getElementById("icon-grid").innerHTML = icons.map(name =>
      <img class="icon" src="assets/icons/svg/${name}.svg" alt="" loading="lazy">
      <code>${name}</code>
    </div>`).join("");
+
+// Mark the section the reader is currently in.
+const links = new Map([...document.querySelectorAll(".sidebar__nav a")]
+  .map(a => [a.hash.slice(1), a]));
+const observer = new IntersectionObserver(entries => {
+  for (const entry of entries) {
+    links.get(entry.target.id)?.classList.toggle("is-current", entry.isIntersecting);
+  }
+}, { rootMargin: "-10% 0px -70% 0px" });
+document.querySelectorAll(".section").forEach(section => observer.observe(section));
 </script>
 </body>
 </html>
