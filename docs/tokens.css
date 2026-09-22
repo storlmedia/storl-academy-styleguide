@@ -29,8 +29,8 @@
   --color-white: #ffffff;
 
   /* Font families */
-  --font-heading: "Arek", Georgia, "Times New Roman", serif;
-  --font-body: "Mulish", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "arek", Georgia, serif;
+  --font-body: "Mulish", system-ui, "Helvetica Neue", Arial, sans-serif;
 
   /* Type styles — headings (Arek) */
   --h1-size: 41.6px;
