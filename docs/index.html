@@ -52,69 +52,31 @@
       Editor heißen genauso, damit dort nicht nach Hex-Werten gesucht werden
       muss.</p>
 
-    <h3>Primärfarben</h3>
-    <div class="grid">
-      <div><div class="swatch__color" style="background: var(--color-grape-dark)"></div>
-        <div class="swatch__name">Grape dark</div>
-        <div class="swatch__meta">#593744<br><code>--color-grape-dark</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-grape)"></div>
-        <div class="swatch__name">Grape</div>
-        <div class="swatch__meta">#815B6C<br><code>--color-grape</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-light-yellow)"></div>
-        <div class="swatch__name">Light Yellow</div>
-        <div class="swatch__meta">#F0F0C9<br><code>--color-light-yellow</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-peach)"></div>
-        <div class="swatch__name">Peach</div>
-        <div class="swatch__meta">#E7BC9C<br><code>--color-peach</code></div></div>
+    <div class="format">
+      <label for="color-format">Format</label>
+      <select id="color-format">
+        <option value="hex">HEX</option>
+        <option value="rgb">RGB</option>
+        <option value="rgba">RGBA</option>
+        <option value="hsl">HSL</option>
+        <option value="hsla">HSLA</option>
+        <option value="var">CSS-Variable</option>
+      </select>
+      <span class="format__hint">Klick auf eine Farbe kopiert den Wert.</span>
     </div>
 
+    <h3>Primärfarben</h3>
+    <div class="grid" id="colors-primary"></div>
+
     <h3>Sekundärfarben</h3>
-    <div class="grid">
-      <div><div class="swatch__color" style="background: var(--color-grape-light)"></div>
-        <div class="swatch__name">Grape light</div>
-        <div class="swatch__meta">#B398A7<br><code>--color-grape-light</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-grape-extra-light)"></div>
-        <div class="swatch__name">Grape extra light</div>
-        <div class="swatch__meta">#E6DBE0<br><code>--color-grape-extra-light</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-grape-extra-light-3)"></div>
-        <div class="swatch__name">Grape extra light 3</div>
-        <div class="swatch__meta">#FBF4F6<br><code>--color-grape-extra-light-3</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-extra-light-yellow)"></div>
-        <div class="swatch__name">Extra light Yellow</div>
-        <div class="swatch__meta">#FCFCF0<br><code>--color-extra-light-yellow</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-peach-light)"></div>
-        <div class="swatch__name">Peach light</div>
-        <div class="swatch__meta">#F9E5D7<br><code>--color-peach-light</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-olive)"></div>
-        <div class="swatch__name">Olive</div>
-        <div class="swatch__meta">#496F56<br><code>--color-olive</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-moos)"></div>
-        <div class="swatch__name">Moos</div>
-        <div class="swatch__meta">#92AC7B<br><code>--color-moos</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-moos-light)"></div>
-        <div class="swatch__name">Moos light</div>
-        <div class="swatch__meta">#E7EBE4<br><code>--color-moos-light</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-lake)"></div>
-        <div class="swatch__name">Lake</div>
-        <div class="swatch__meta">#005167<br><code>--color-lake</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-arctic)"></div>
-        <div class="swatch__name">Arctic</div>
-        <div class="swatch__meta">#769998<br><code>--color-arctic</code></div></div>
-    </div>
+    <div class="grid" id="colors-secondary"></div>
     <div class="note">
       <p>Im Quelldokument tragen „Grape extra light“ und „Grape extra light 2“
         denselben Hex-Wert. Bis das geklärt ist, gibt es hier nur eine der beiden.</p>
     </div>
 
     <h3>Schriftfarben</h3>
-    <div class="grid">
-      <div><div class="swatch__color" style="background: var(--color-body-text)"></div>
-        <div class="swatch__name">Body Text</div>
-        <div class="swatch__meta">#444444<br><code>--color-body-text</code></div></div>
-      <div><div class="swatch__color" style="background: var(--color-text-light-grey)"></div>
-        <div class="swatch__name">Text light Grey</div>
-        <div class="swatch__meta">#7A7A7A<br><code>--color-text-light-grey</code></div></div>
-    </div>
+    <div class="grid" id="colors-text"></div>
   </section>
 
   <section class="section" id="schriften">
@@ -311,6 +273,124 @@
 </div>
 
 <script>
+// Colors, by group. The value itself comes from tokens.css at runtime, so it is
+// only written down in one place.
+const colorGroups = {
+  "colors-primary": [
+    ["Grape dark", "--color-grape-dark"],
+    ["Grape", "--color-grape"],
+    ["Light Yellow", "--color-light-yellow"],
+    ["Peach", "--color-peach"]
+  ],
+  "colors-secondary": [
+    ["Grape light", "--color-grape-light"],
+    ["Grape extra light", "--color-grape-extra-light"],
+    ["Grape extra light 3", "--color-grape-extra-light-3"],
+    ["Extra light Yellow", "--color-extra-light-yellow"],
+    ["Peach light", "--color-peach-light"],
+    ["Olive", "--color-olive"],
+    ["Moos", "--color-moos"],
+    ["Moos light", "--color-moos-light"],
+    ["Lake", "--color-lake"],
+    ["Arctic", "--color-arctic"]
+  ],
+  "colors-text": [
+    ["Body Text", "--color-body-text"],
+    ["Text light Grey", "--color-text-light-grey"]
+  ]
+};
+
+const root = getComputedStyle(document.documentElement);
+const hexOf = token => root.getPropertyValue(token).trim();
+
+const rgbOf = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16));
+
+function hslOf(hex) {
+  const [r, g, b] = rgbOf(hex).map(v => v / 255);
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+  const l = (max + min) / 2;
+  const s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+  let h = 0;
+  if (d !== 0) {
+    if (max === r) h = ((g - b) / d) % 6;
+    else if (max === g) h = (b - r) / d + 2;
+    else h = (r - g) / d + 4;
+  }
+  h = Math.round(h * 60);
+  if (h < 0) h += 360;
+  return [h, Math.round(s * 100), Math.round(l * 100)];
+}
+
+function formatColor(token, format) {
+  const hex = hexOf(token);
+  const rgb = rgbOf(hex);
+  const hsl = hslOf(hex);
+  switch (format) {
+    case "rgb": return `rgb(${rgb.join(", ")})`;
+    case "rgba": return `rgba(${rgb.join(", ")}, 1)`;
+    case "hsl": return `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
+    case "hsla": return `hsla(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%, 1)`;
+    case "var": return `var(${token})`;
+    default: return hex.toUpperCase();
+  }
+}
+
+const formatSelect = document.getElementById("color-format");
+
+function renderColors() {
+  const format = formatSelect.value;
+  for (const [id, colors] of Object.entries(colorGroups)) {
+    document.getElementById(id).innerHTML = colors.map(([name, token]) => `
+      <button class="swatch" type="button" data-token="${token}">
+        <span class="swatch__color" style="background: var(${token})"></span>
+        <span class="swatch__name">${name}</span>
+        <span class="swatch__value">${formatColor(token, format)}</span>
+        <span class="swatch__feedback">Kopiert</span>
+      </button>`).join("");
+  }
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    // clipboard API needs a secure context; this works when opened from disk
+    const field = document.createElement("textarea");
+    field.value = text;
+    document.body.append(field);
+    field.select();
+    const ok = document.execCommand("copy");
+    field.remove();
+    return ok;
+  }
+}
+
+document.querySelectorAll(".grid[id^=colors-]").forEach(grid => {
+  grid.addEventListener("click", async event => {
+    const swatch = event.target.closest(".swatch");
+    if (!swatch) return;
+    if (!await copyText(formatColor(swatch.dataset.token, formatSelect.value))) return;
+    swatch.classList.add("is-copied");
+    setTimeout(() => swatch.classList.remove("is-copied"), 1200);
+  });
+});
+
+// Whatever format someone picked is the one they will want next time.
+try {
+  const stored = localStorage.getItem("color-format");
+  if (stored) formatSelect.value = stored;
+} catch {}
+
+formatSelect.addEventListener("change", () => {
+  renderColors();
+  try {
+    localStorage.setItem("color-format", formatSelect.value);
+  } catch {}
+});
+
+renderColors();
+
 // Tile list for the icon section — add a name here when a new icon lands in assets/icons/.
 const icons = [
   "amulett",
