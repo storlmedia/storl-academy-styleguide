@@ -11,6 +11,15 @@ body {
   background: var(--color-white);
 }
 
+/* :where() keeps this at zero specificity, so a component's own color wins
+   inside the demo areas. */
+:where(.page) a {
+  color: var(--color-grape);
+  text-underline-offset: 2px;
+}
+
+:where(.page) a:hover { color: var(--color-grape-dark); }
+
 code {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 0.85em;
@@ -287,6 +296,21 @@ code {
   color: var(--color-text-light-grey);
   word-break: break-word;
 }
+
+.icon-tile__files {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.icon-tile__files a {
+  color: var(--color-grape);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-grape-extra-light);
+}
+
+.icon-tile__files a:hover { border-bottom-color: var(--color-grape); }
 
 /* Spacing table */
 .spacing-table {
