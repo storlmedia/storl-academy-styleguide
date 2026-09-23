@@ -70,10 +70,6 @@
 
     <h3>Sekundärfarben</h3>
     <div class="grid" id="colors-secondary"></div>
-    <div class="note">
-      <p>Im Quelldokument tragen „Grape extra light“ und „Grape extra light 2“
-        denselben Hex-Wert. Bis das geklärt ist, gibt es hier nur eine der beiden.</p>
-    </div>
 
     <h3>Schriftfarben</h3>
     <div class="grid" id="colors-text"></div>
@@ -106,8 +102,13 @@
     </div>
     <div class="specimen">
       <div class="h2">Herzlich Willkommen in der</div>
-      <div class="specimen__meta"><b>H2</b> · Arek · 1.5rem (24px) · kursiv · 400<br>Zeilenhöhe 1.25 (30px) ·
+      <div class="specimen__meta"><b>H2</b> · Arek · 2rem (32px) · kursiv · 500 medium<br>Zeilenhöhe 1.25 (40px) ·
         Grape<br>Zwischenüberschrift über Texten</div>
+    </div>
+    <div class="specimen">
+      <div class="pretitle">Herzlich Willkommen in der</div>
+      <div class="specimen__meta"><b>Pre-Titel</b> · Arek · 1.5rem (24px) · kursiv · 400<br>Zeilenhöhe 1.25 (30px) ·
+        Grape</div>
     </div>
     <div class="specimen">
       <div class="h3">Lerne 24 heimische Pflanzen kennen</div>
@@ -497,6 +498,7 @@ const colorGroups = {
   "colors-secondary": [
     ["Grape light", "--color-grape-light", "32 | 41 | 23 | 5"],
     ["Grape extra light", "--color-grape-extra-light", "11 | 15 | 9 | 0"],
+    ["Grape extra light 2", "--color-grape-extra-light-2", null],
     ["Grape extra light 3", "--color-grape-extra-light-3", "2 | 6 | 2 | 0"],
     ["Extra light Yellow", "--color-extra-light-yellow", "2 | 0 | 9 | 0"],
     ["Peach light", "--color-peach-light", "2 | 13 | 16 | 0"],
@@ -547,7 +549,7 @@ function formatColor(token, format) {
     case "hsl": return `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
     case "hsla": return `hsla(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%, 1)`;
     case "var": return `var(${token})`;
-    case "cmyk": return cmyk[token];
+    case "cmyk": return cmyk[token] ?? "nicht angegeben";
     default: return hex.toUpperCase();
   }
 }
