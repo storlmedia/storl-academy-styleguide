@@ -22,8 +22,7 @@
   /* Secondary colors */
   --color-grape-light: #b398a7;
   --color-grape-extra-light: #e6dbe0;
-  /* "Grape extra light 2" carries the same hex as "Grape extra light" in the
-     source document. Kept out until the designer clarifies. */
+  --color-grape-extra-light-2: #f7f5f6;
   --color-grape-extra-light-3: #fbf4f6;
   --color-extra-light-yellow: #fcfcf0;
   --color-peach-light: #f9e5d7;
