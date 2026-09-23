@@ -52,6 +52,10 @@
   --h2-weight: 500;
   --h2-line-height: 1.25; /* 40px */
 
+  --pretitle-size: 1.5rem; /* 24px */
+  --pretitle-weight: 400;
+  --pretitle-line-height: 1.25; /* 30px */
+
   --h3-size: 1.375rem; /* 22px */
   --h3-weight: 400;
   --h3-line-height: 1.55; /* 34.1px */

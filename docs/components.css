@@ -1,7 +1,7 @@
 /* Components defined by the styleguide. */
 
 /* Headings */
-.h1, .h2, .h3, .h4 {
+.h1, .h2, .pretitle, .h3, .h4 {
   font-family: var(--font-heading);
   color: var(--color-grape);
   margin: 0;
@@ -19,6 +19,13 @@
   font-weight: var(--h2-weight);
   font-style: italic;
   line-height: var(--h2-line-height);
+}
+
+.pretitle {
+  font-size: var(--pretitle-size);
+  font-weight: var(--pretitle-weight);
+  font-style: italic;
+  line-height: var(--pretitle-line-height);
 }
 
 .h3 {
