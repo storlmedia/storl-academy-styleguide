@@ -352,6 +352,8 @@ code {
 
 .spacing-table th { color: var(--color-text-light-grey); font-weight: 600; }
 
+.spacing-table code { white-space: nowrap; }
+
 /* Annotated layout examples. Each gap is a real element of the specified
    height, so the mockups stay honest if a token changes. */
 .spec {
