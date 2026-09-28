@@ -105,8 +105,9 @@
   text-decoration: none;
 }
 
-.link--internal { color: var(--color-moos); }
-.link--external { color: var(--color-peach); }
+.link--internal { color: var(--color-grape); }
+.link--external { color: var(--color-olive); }
+.link:hover { color: var(--color-grape-dark); }
 
 .readmore {
   display: inline-flex;
